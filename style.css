@@ -86,12 +86,7 @@ h1, h2, h3 {
   transition: all 0.3s ease;
 }
 
-#navbar.scrolled {
- /* background: rgba(0, 0, 0, 0.6); */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
+
 
 .navbari {
     margin: 20px 0;
