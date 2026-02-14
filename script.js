@@ -1,10 +1,9 @@
-// ==================== EMAILJS INIT ====================
+//EMAILJS INIT
 (function() {
     if (typeof emailjs !== 'undefined') {
         emailjs.init("kookDvy7kGgKMqao4");
     }
 })();
-
 
 
 
@@ -151,8 +150,7 @@ function addSliderStyles() {
     document.head.appendChild(style);
 }
 
-// ==================== TRANSLATIONS ====================
-// ==================== TRANSLATIONS ====================
+//TRANSLATIONS
 const translations = {
     sq: {
         // Navigation
