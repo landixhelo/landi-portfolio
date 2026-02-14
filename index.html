@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 Free -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="style.css">
+    <title>Landi Xhelo</title>
+</head>
+
+<body>
+
+    <nav id="navbar" class="scrolled">
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-sm-12 col-md-6" style="margin: 0 auto;">
+                    <div class="row navbari">
+                        
+                        <div class="col-sm-12 col-md-3 text-center">
+                            <div class="nav-bar">
+                                <h3><a href="#home" data-i18n="home">home</a></h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 text-center">
+                            <div class="nav-bar">
+                                <h3><a href="#featured-project" data-i18n="project">project</a></h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 text-center">
+                            <div class="nav-bar">
+                                <h3><a href="#service" data-i18n="services">services</a></h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 text-center">
+                            <div class="nav-bar dropdown">
+                                <h3 class="dropdown-toggle">
+                                    <a href="#" id="languageDropdown"> Language</a>
+                                </h3>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" onclick="changeLanguage('sq')">Albanian</a></li>
+                                    <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-sm-12 col-md-12">
+                    <div class="home-section">
+                        <h4><i class="fa-solid fa-circle"></i> <span data-i18n="available">available for hiring!</span>
+                        </h4>
+                        <h1>
+    <span data-i18n="web_dev_part1">Web Developer &</span>
+    <br>
+    <span data-i18n="web_dev_part2">FullStack Developer.</span>
+</h1>
+                        <p data-i18n="home_desc">I design and develop high-end web experiences for design-driven
+                            companies that value attention to detail.</p>
+                        <button class="btn">
+                            <a href="#footer" id="contactBtn">
+                                <span data-i18n="contact_me">contact me</span>
+                                <i class="fa-solid fa-location-arrow"></i>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="tech-content reveal">
+                            <h2 data-i18n="tech_stack">My Tech Stack</h2>
+                            <p data-i18n="tech_desc">I work with modern technologies to build fast, scalable and
+                                user-friendly web applications. <br> From frontend development to backend architecture
+                                and databases, I focus on clean code and performance.</p>
+                        </div>
+                    </div>
+                    <div class="slider container-fluid">
+                        <div class="slide-track">
+                            <i class="fa-brands fa-react"></i>
+                            <i class="fa-brands fa-js"></i>
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <i class="fa-brands fa-node-js"></i>
+                            <i class="fa-brands fa-npm"></i>
+                            <i class="fa-brands fa-git-alt"></i>
+                            <i class="fa-solid fa-database"></i>
+
+                            <!-- Duplikim për infinity -->
+                            <i class="fa-brands fa-react"></i>
+                            <i class="fa-brands fa-js"></i>
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <i class="fa-brands fa-node-js"></i>
+                            <i class="fa-brands fa-npm"></i>
+                            <i class="fa-brands fa-git-alt"></i>
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-project">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="featured-header reveal">
+                        <h4 data-i18n="featured_projects">featured projects</h4>
+                        <h1>
+    <span data-i18n="creativity_part1">showing creativity</span>
+    <br>
+    <span data-i18n="creativity_part2">and precision.</span>
+</h1>
+                        <p data-i18n="featured_desc">A curated selection of UX and web builds that highlight
+                            problem-solving, <br> design strategy, and full-stack agility across diverse industries and
+                            audiences.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="featured-card">
+                        <div class="image-wrapper">
+                            <img src="img/project1.jpg" alt="featured-1">
+                        </div>
+                        <h2 data-i18n="project1_title">Adaptive E-Commerce Framework</h2>
+                        <p data-i18n="project1_desc">Responsive shopping experience with dynamic filters, modular
+                            components, and clean UI.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="featured-card">
+                        <div class="image-wrapper">
+                            <img src="img/project2.jpg" alt="featured-2">
+                        </div>
+                        <h2 data-i18n="project2_title">SaaS Dashboard Interface System</h2>
+                        <p data-i18n="project2_desc">build a scalable interface with custom charts, microinteractions,
+                            and dark/light mode.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="featured-card">
+                        <div class="image-wrapper">
+                            <img src="img/project3.jpg" alt="featured-3">
+                        </div>
+                        <h2 data-i18n="project3_title">Mobile-First Portfolio Grid</h2>
+                        <p data-i18n="project3_desc">designed a grid layout optimized for mobile scroll behavior,
+                            media-heavy perfomance</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="featured-card">
+                        <div class="image-wrapper">
+                            <img src="img/project4.jpg" alt="featured-4">
+                        </div>
+                        <h2 data-i18n="project4_title">Restaurant Booking UX Flow</h2>
+                        <p data-i18n="project4_desc">streamlined table booking with user flows, calendar sync, and
+                            feedback microcopy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="service-header reveal">
+                        <h4 data-i18n="my_services">my services</h4>
+                        <h1>
+    <span data-i18n="services_title_part1">Elevate Your Online</span>
+    <br>
+    <span data-i18n="services_title_part2">Presence with Me</span>
+</h1>
+                        <p data-i18n="services_desc">Crafting User-Centric Websites and Applications for Seamless <br>
+                            Digital Experiences.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-card">
+                        <div class="img">
+                            <svg class="text-white" width="2.5rem" height="2.5rem" fill="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                                <path
+                                    d="M14.414 16.498c-.391 0-.794-.052-1.21-.155a.747.747 0 0 1-.547-.547c-.426-1.717.023-3.206 1.374-4.553 1.387-1.387 2.93-2.057 5.157-2.24a.748.748 0 0 1 .809.809c-.183 2.228-.853 3.771-2.24 5.158-1.02 1.022-2.122 1.528-3.343 1.528zm-.389-1.523c.994.121 1.814-.208 2.67-1.064.947-.947 1.457-1.92 1.693-3.299-1.379.236-2.352.746-3.298 1.692-.857.855-1.19 1.675-1.065 2.671z">
+                                </path>
+                                <path
+                                    d="M11.75 18a.75.75 0 0 1-.53-1.281l3.5-3.5a.75.75 0 1 1 1.061 1.061l-3.5 3.5a.748.748 0 0 1-.531.22zM9.28 20H5.75C4.785 20 4 19.215 4 18.25v-8.5C4 8.785 4.785 8 5.75 8h5.5c.903 0 1.667.708 1.738 1.611a.75.75 0 0 1-.689.806.76.76 0 0 1-.807-.689.252.252 0 0 0-.242-.228h-5.5a.253.253 0 0 0-.25.25v8.5c0 .136.114.25.25.25h3.53a.75.75 0 0 1 0 1.5z">
+                                </path>
+                                <path
+                                    d="M21.25 23H2.75A2.752 2.752 0 0 1 0 20.25V3.75A2.752 2.752 0 0 1 2.75 1h18.5A2.752 2.752 0 0 1 24 3.75v16.5A2.752 2.752 0 0 1 21.25 23zM2.75 2.5c-.689 0-1.25.561-1.25 1.25v16.5c0 .689.561 1.25 1.25 1.25h18.5c.689 0 1.25-.561 1.25-1.25V3.75c0-.689-.561-1.25-1.25-1.25H2.75z">
+                                </path>
+                                <path d="M23.25 6H.75a.75.75 0 0 1 0-1.5h22.5a.75.75 0 0 1 0 1.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="service-text">
+                            <h3 data-i18n="service1_title">Website Design and Development</h3>
+                            <p data-i18n="service1_desc">Custom website design and development tailored to your brand
+                                and business needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-card">
+                        <div class="img">
+                            <svg class="text-white" width="2.5rem" height="2.5rem" fill="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                                <path d="M23.25 24H.75a.75.75 0 0 1 0-1.5h22.5a.75.75 0 0 1 0 1.5z"></path>
+                                <path
+                                    d="M6.25 24h-4.5a.75.75 0 0 1-.75-.75v-5c0-.689.561-1.25 1.25-1.25h3.5c.689 0 1.25.561 1.25 1.25v5a.75.75 0 0 1-.75.75zM2.5 22.5h3v-4h-3v4zM14.25 24h-4.5a.75.75 0 0 1-.75-.75v-11c0-.689.561-1.25 1.25-1.25h3.5c.689 0 1.25.561 1.25 1.25v11a.75.75 0 0 1-.75.75zm-3.75-1.5h3v-10h-3v10zM22.25 24h-4.5a.75.75 0 0 1-.75-.75v-9c0-.689.561-1.25 1.25-1.25h3.5c.689 0 1.25.561 1.25 1.25v9a.75.75 0 0 1-.75.75zm-3.75-1.5h3v-8h-3v8zM2.75 11a.751.751 0 0 1-.516-1.294l4.75-4.5a.743.743 0 0 1 .649-.193l7.863 1.43L20.72 1.22a.75.75 0 1 1 1.061 1.061l-5.5 5.5a.751.751 0 0 1-.664.208L7.74 6.556l-4.475 4.239A.744.744 0 0 1 2.75 11z">
+                                </path>
+                                <path
+                                    d="M21.25 6a.75.75 0 0 1-.75-.75V2.5h-2.75a.75.75 0 0 1 0-1.5h3.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-.75.75z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="service-text">
+                            <h3 data-i18n="service2_title">User Research and Analysis</h3>
+                            <p data-i18n="service2_desc">Conduct user research to understand your target audience, their
+                                needs, and behaviors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-card">
+                        <div class="img">
+                            <svg class="text-white" width="2.5rem" height="2.5rem" fill="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                                <path
+                                    d="M3.79 17.55a.75.75 0 0 1-.53-1.281l1.729-1.729c.709-.709 1.942-.709 2.651 0a.75.75 0 1 1-1.061 1.061.37.37 0 0 0-.53 0L4.32 17.33a.744.744 0 0 1-.53.22z">
+                                </path>
+                                <path
+                                    d="M8.71 20H4.75C3.785 20 3 19.215 3 18.25v-8.5C3 8.785 3.785 8 4.75 8h6.5c.965 0 1.75.785 1.75 1.75v.5a.75.75 0 0 1-1.5 0v-.5a.25.25 0 0 0-.25-.25h-6.5a.253.253 0 0 0-.25.25v8.5c0 .136.114.25.25.25h3.96a.75.75 0 0 1 0 1.5z">
+                                </path>
+                                <path
+                                    d="M8.25 23h-5.5A2.752 2.752 0 0 1 0 20.25V3.75A2.752 2.752 0 0 1 2.75 1h18.5A2.752 2.752 0 0 1 24 3.75v8.5a.75.75 0 0 1-1.5 0v-8.5c0-.689-.561-1.25-1.25-1.25H2.75c-.689 0-1.25.561-1.25 1.25v16.5c0 .689.561 1.25 1.25 1.25h5.5a.75.75 0 0 1 0 1.5z">
+                                </path>
+                                <path
+                                    d="M23.25 6H.75a.75.75 0 0 1 0-1.5h22.5a.75.75 0 0 1 0 1.5zM15.025 20.343a.744.744 0 0 1-.53-.22l-4.542-4.542a1.685 1.685 0 0 1 .002-2.393 1.696 1.696 0 0 1 2.392-.001l2.665 2.665a.75.75 0 1 1-1.061 1.061l-2.664-2.664a.19.19 0 0 0-.272.001.188.188 0 0 0-.001.272l4.542 4.542a.75.75 0 0 1-.531 1.279z">
+                                </path>
+                                <path
+                                    d="M15.591 18.242a.744.744 0 0 1-.53-.22l-1.109-1.11a1.685 1.685 0 0 1 0-2.393 1.695 1.695 0 0 1 2.394-.001l.444.444a.75.75 0 1 1-1.061 1.061l-.444-.444a.19.19 0 0 0-.272.001.194.194 0 0 0-.058.137.194.194 0 0 0 .057.135l1.11 1.111a.75.75 0 0 1-.531 1.279z">
+                                </path>
+                                <path
+                                    d="M17.368 17.353a.744.744 0 0 1-.53-.22l-1.109-1.11a1.678 1.678 0 0 1-.496-1.197c0-.451.176-.876.495-1.195a1.682 1.682 0 0 1 1.197-.497h.001c.452 0 .878.177 1.197.497l.887.887a.75.75 0 1 1-1.061 1.061l-.888-.888c-.065-.065-.208-.063-.273.001-.062.062-.063.207 0 .271l1.11 1.111a.75.75 0 0 1-.53 1.279z">
+                                </path>
+                                <path
+                                    d="M22.478 17.128a.744.744 0 0 1-.53-.22l-2.664-2.664a.192.192 0 0 0-.273.001.19.19 0 0 0 0 .271l.666.666a.75.75 0 1 1-1.061 1.061l-.666-.666a1.694 1.694 0 0 1 2.395-2.394l2.664 2.664a.75.75 0 0 1-.531 1.281z">
+                                </path>
+                                <path
+                                    d="M18.736 23.995c-1 0-2.151-.313-3.471-.939-1.37-.651-2.02-.623-2.448-.611-.378.017-.856.033-1.312-.421-.449-.452-.602-1.349.444-2.395.899-.899 2.229-.919 3.186-.778a.75.75 0 0 1-.219 1.485c-.503-.074-1.424-.128-1.906.354a2.301 2.301 0 0 0-.224.255c.54-.018 1.445-.042 3.124.756 2.797 1.329 3.896.715 4.482.141l.885-.885c1.091-1.09 1.86-2.857.456-4.262l-2.45-2.45a.192.192 0 0 0-.273.001c-.063.063-.064.207 0 .271a.75.75 0 1 1-1.061 1.061 1.694 1.694 0 0 1 2.395-2.394l2.441 2.441c1.781 1.781 1.6 4.345-.442 6.388l-.894.893c-.738.727-1.637 1.089-2.713 1.089z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="service-text">
+                            <h3 data-i18n="service3_title">UI/UX Design</h3>
+                            <p data-i18n="service3_desc">Design user interfaces (UI) that are visually appealing and in
+                                line with your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-card">
+                        <div class="img">
+                            <svg class="text-white" width="2.5rem" height="2.5rem" fill="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                                <path
+                                    d="M16.81 13H4.75a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 4.75 7h14.5a.75.75 0 0 1 .75.75V10a.75.75 0 0 1-1.5 0V8.5h-13v3h11.31a.75.75 0 0 1 0 1.5zM13.82 15.99H4.8a.75.75 0 0 1 0-1.5h9.02a.75.75 0 0 1 0 1.5zM10.84 18.99H4.8a.75.75 0 0 1 0-1.5h6.04a.75.75 0 0 1 0 1.5zM12.527 24a.748.748 0 0 1-.738-.881l.53-3.005a.76.76 0 0 1 .208-.4l7.425-7.424c.316-.316.651-.513.996-.585.477-.1.939.045 1.302.409l1.237 1.237a1.753 1.753 0 0 1 0 2.475l-7.424 7.425a.746.746 0 0 1-.4.208l-3.005.53a.827.827 0 0 1-.131.011zm3.006-1.28h.01-.01zm-1.778-2.112-.303 1.717 1.717-.303 7.257-7.258a.252.252 0 0 0 0-.354l-1.228-1.228c-.01.019-.085.067-.186.167l-7.257 7.259z">
+                                </path>
+                                <path
+                                    d="M9.83 22H2.75A2.752 2.752 0 0 1 0 19.25V2.75A2.752 2.752 0 0 1 2.75 0h18.5A2.752 2.752 0 0 1 24 2.75v7.29a.75.75 0 0 1-1.5 0V2.75c0-.689-.561-1.25-1.25-1.25H2.75c-.689 0-1.25.561-1.25 1.25v16.5c0 .689.561 1.25 1.25 1.25h7.08a.75.75 0 0 1 0 1.5z">
+                                </path>
+                                <path d="M23.25 5H.75a.75.75 0 0 1 0-1.5h22.5a.75.75 0 0 1 0 1.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="service-text">
+                            <h3 data-i18n="service4_title">Full-Stack Development</h3>
+                            <p data-i18n="service4_desc">Ensure cross-browser compatibility and accessibility standards
+                                are met.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="project-header reveal">
+                        <h4 data-i18n="key_metrics">Key Project Metrics</h4>
+                        <h1>
+    <span data-i18n="metrics_title_part1">Measurable Success</span>
+    <br>
+    <span data-i18n="metrics_title_part2">From Smart Design.</span>
+</h1>
+                        <p data-i18n="metrics_desc">A snapshot of performance outcomes and workflow impact achieved
+                            through scalable UX strategy and thoughtful web development.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <div class="project-card">
+                        <h2>150+</h2>
+                        <h4 data-i18n="metric1">project delivered</h4>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <div class="project-card">
+                        <h2>98%+</h2>
+                        <h4 data-i18n="metric2">Average User Satisfaction</h4>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <div class="project-card">
+                        <h2>+42%+</h2>
+                        <h4 data-i18n="metric3">Conversion Rate Improvement</h4>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <div class="project-card">
+                        <h2>35+ Hrs</h2>
+                        <h4 data-i18n="metric4">Time Saved Per Project</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="container">
+            <div class="col-sm-12 col-md-6">
+                <div class="footer-header reveal">
+                    <h4 data-i18n="get_in_touch">Get In Touch</h4>
+                    <h1>
+    <span data-i18n="footer_title_part1">I'm Here To Help</span>
+    <br>
+    <span data-i18n="footer_title_part2">You Succeed.</span>
+</h1>
+                </div>
+                <div class="contact-container">
+                    <h2 data-i18n="contact_me_title">Contact Me</h2>
+
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label data-i18n="full_name">Full name *</label>
+                            <input type="text" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="email_address">Email address *</label>
+                            <input type="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="phone_number">Phone number *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="subject">Subject *</label>
+                            <input type="text" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="your_message">Your message *</label>
+                            <textarea name="message" rows="5" required></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy" data-i18n="privacy_policy">
+                                By submitting this form, I agree to the privacy policy.
+                            </label>
+                        </div>
+
+                        <button type="submit" data-i18n="send_message">Send Message</button>
+                    </form>
+
+                    <div id="formMessage" style="color:#ff751f; margin-top:15px; display:none;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="footer-bottom"></div>
+        </div>
+        <div class="com-sm-12 col-md-12">
+            <div class="container contact-line">
+                <div class="contact-footer">
+                    <div class="contact-info">
+                        <p><span data-i18n="copyright">&copy; Landi Xhelo. All rights reserved.</span></p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="row">
+                            <div class="col">
+                                <p><a href="https://www.instagram.com/landi.xhelo" target="_blank"><i
+                                            class="fa-brands fa-instagram"></i></a></p>
+                            </div>
+                            <div class="col">
+                                <a href="https://wa.me/355686925014" target="_blank">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <p><a href="https://devbyland.netlify.app/" target="_blank"><i
+                                            class="fa-brands fa-chrome"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
