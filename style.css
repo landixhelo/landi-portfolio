@@ -190,12 +190,11 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center !important;
     align-items: center !important;
     text-align: center;
-    padding-top: 50px;
 }
 
 .home-section {
