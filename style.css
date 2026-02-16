@@ -370,7 +370,7 @@ h1, h2, h3 {
 
 .service-header {
     margin-bottom: 80px;
-    text-align: center;
+    text-align: start;
 }
 
 .service-header h4 {
@@ -656,6 +656,72 @@ h1, h2, h3 {
 }
 
 
+.whatsapp-float {
+    position: fixed;
+    bottom: 100px;  /* Ndrysho nga 30px në 100px */
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+/* animation */
+.fadeinleft {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+
+.fadeinright {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}
+
+.fadeindown {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1.2s ease-out;
+}
+
+.fadeinup {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.2s ease-out;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: all 1.3s ease-in;
+}
+
+.active-left,
+.active,
+.active-right,
+.active-down,
+.active-up {
+  opacity: 1;
+  transform: translateX(0);
+  transform: translateY(0);
+}
+
+.fadein {
+  opacity: 0;
+}
+
+
 
 /* TABLET (max 992px) */
 
@@ -687,6 +753,14 @@ h1, h2, h3 {
 
 /* MOBILE (max 768px) */
 @media (max-width: 768px) {
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+    }
 
      .nav-bar:not(.dropdown) a::after {
         width: 30px; /* Vijë më e shkurtër për mobile */
