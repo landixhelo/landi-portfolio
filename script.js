@@ -370,6 +370,8 @@ function setupDropdown() {
     }
 }
 
+
+
 // COUNTER ANIMATION 
 function initCounters() {
     const counters = document.querySelectorAll(".project-card h2");
