@@ -357,6 +357,7 @@ h1, h2, h3 {
     width: 100%;
     display: block;
     transition: transform 0.4s ease;
+    height:auto;
 }
 
 .image-wrapper:hover img {
@@ -754,14 +755,17 @@ h1, h2, h3 {
 /* MOBILE (max 768px) */
 @media (max-width: 768px) {
 
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-        font-size: 28px;
+          .whatsapp-float {
+        bottom: auto;           /* Anulon bottom */
+        top: 50%;               /* Vendos në mes vertikal */             /* Vendos në mes horizontal */
+        right: auto;            /* Anulon right */
+        transform: translate(-50%, -50%); /* Korrigjon qendrën e saktë */
+        width: 70px;            /* Pak më i madh për mobile */
+        height: 70px;
+        font-size: 35px;
+        position: fixed;        /* Mbetet fixed */
+        animation: pulse 2s infinite;
     }
-
      .nav-bar:not(.dropdown) a::after {
         width: 30px; /* Vijë më e shkurtër për mobile */
         left: 50%;
@@ -884,7 +888,7 @@ h1, h2, h3 {
 
     .featured-header,
     .project-header {
-        text-align: center;
+        text-align: start;
     }
 
     .project-card {
@@ -911,6 +915,31 @@ h1, h2, h3 {
 
 /* SMALL MOBILE (max 480px) */
 @media (max-width: 480px) {
+      .whatsapp-float {
+        bottom: 70px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
 
     .home-section h1 {
         font-size: 26px;
