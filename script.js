@@ -198,6 +198,10 @@ const translations = {
         service3_desc: "Dizajnoj interface përdoruesi (UI) që janë tërheqëse vizualisht dhe në linjë me identitetin e markës suaj.",
         service4_title: "Zhvillim Full-Stack",
         service4_desc: "Siguroj përputhshmëri ndër-shfletuesish dhe standarde të aksesueshmërisë.",
+        service5_title: "Mirëmbajtja dhe Mbështetje",
+        service5_desc: "Përditësime, rregullime, kopje rezervë, monitorim dhe përmirësime të vazhdueshme. Faqja juaj e internetit mbetet e sigurt, e shpejtë dhe e besueshme shumë kohë pas lançimit.",
+        service6_title: "Dyqane E-commerce që shesin",
+        service6_desc: "Faqe produktesh moderne + përfundim i lehtë i pagesave. Pagesa me Stripe, rrjedha e shportës, email-e porosish dhe një konfigurim administratori që është i lehtë për t’u menaxhuar.",
         
         // Metrics
         key_metrics: "Treguesit Kryesorë të Projekteve",
@@ -269,6 +273,10 @@ const translations = {
         service3_desc: "Design user interfaces (UI) that are visually appealing and in line with your brand identity.",
         service4_title: "Full-Stack Development",
         service4_desc: "Ensure cross-browser compatibility and accessibility standards are met.",
+        service5_title: "Maintenance & Support",
+        service5_desc: "Updates, fixes, backups, monitoring, and ongoing improvements. Your site stays secure, fast, and reliable long after launch.",
+        service6_title: "E-commerce Stores That Sell",
+        service6_desc: "Modern product pages + smooth checkout. Stripe payments, cart flows, order emails, and an admin setup that's easy to manage.",
         
         // Metrics
         key_metrics: "Key Project Metrics",
@@ -469,61 +477,56 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initCounters, 500);
 });
 
-//CONTACT FORM 
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    if (!contactForm) return;
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
+  (function() {
+        const form = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
-        if (formMessage) {
-            formMessage.style.display = 'block';
-            formMessage.textContent = 'Dërgohet...';
-            formMessage.style.color = '#ff751f';
-        }
-        
-        if (typeof emailjs !== 'undefined') {
-            emailjs.sendForm('service_gx2u7rr', 'late_wul0p0k', this)
-                .then(() => {
-                    if (formMessage) {
-                        formMessage.textContent = 'Message sent successfully!';
-                        formMessage.style.color = '#10b981';
+
+        form.addEventListener('submit', async function(e) {
+            // Parandalojmë dërgimin klasik (që shkakton rifreskim ose ridrejtim)
+            e.preventDefault();
+
+            // Mbledhim të dhënat e formës
+            const formData = new FormData(form);
+
+            // Shtojmë një fushë _gotcha për të shmangur spam-in (Formspree e përdor)
+            // Nëse nuk e dëshiron, mund ta heqësh, por Formspree rekomandon.
+            formData.append('_gotcha', '');
+
+            try {
+                // Dërgojmë të dhënat te Formspree
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
                     }
-                    contactForm.reset();
-                    
-                    setTimeout(() => {
-                        if (formMessage) {
-                            formMessage.style.display = 'none';
-                        }
-                    }, 5000);
-                })
-                .catch((err) => {
-                    if (formMessage) {
-                        formMessage.textContent = 'Oops, something went wrong. Try again!';
-                        formMessage.style.color = '#ff4444';
-                    }
-                    console.error('EmailJS error:', err);
                 });
-        } else {
-            // Simulim nëse EmailJS nuk është i disponueshëm
-            setTimeout(() => {
-                if (formMessage) {
-                    formMessage.textContent = 'Message sent successfully!';
-                    formMessage.style.color = '#10b981';
-                }
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    if (formMessage) {
-                        formMessage.style.display = 'none';
+
+                if (response.ok) {
+                    // Sukses
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = '#28a745'; // jeshile
+                    formMessage.innerText = 'Thank You! Your message was sent with success.';
+                    form.reset(); // pastron formën
+                } else {
+                    // Gabim nga serveri
+                    const data = await response.json();
+                    if (data.errors) {
+                        formMessage.style.display = 'block';
+                        formMessage.style.color = '#dc3545'; // kuqe
+                        formMessage.innerText = data.errors.map(error => error.message).join(', ');
+                    } else {
+                        throw new Error('Problem në dërgim');
                     }
-                }, 5000);
-            }, 1000);
-        }
-    });
-});
+                }
+            } catch (error) {
+                // Gabim në rrjet ose tjetër
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#dc3545';
+                formMessage.innerText = 'Ndodhi një gabim. Provo përsëri më vonë.';
+            }
+        });
+    })();
 
 //  SCROLL EFFECTS 
 // Navbar scroll effect

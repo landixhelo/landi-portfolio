@@ -405,6 +405,10 @@ h1, h2, h3 {
     display: flex;
     align-items: start;
     margin: 20px 0;
+    background-color: #262626;
+    padding: 20px;
+    border-radius: 20px;
+    height: 100%;
 }
 
 .service-card .img {
@@ -426,64 +430,13 @@ h1, h2, h3 {
     color: #fafafa;
 }
 
-/* project */
-#project {
-    padding: 50px 0;
-    background-color: #262626;
-    border-radius: 50px;
-}
 
-.project-header {
-    margin-bottom: 50px;
-    text-align: start;
-}
-
-.project-header h4 {
-    color: #ff751f;
-    text-transform: capitalize;
-    font-size: 0.75rem;
-}
-
-.project-header h1 {
-    font-size: calc(1.425rem + 2.1vw);
-    line-height: 1.25;
-    color: white;
-    text-transform: capitalize;
-    margin: 10px 0;
-}
-
-.project-header p {
-    font-size: 1rem;
-    color: white;
-    text-transform: capitalize;
-}
-
-.project-card {
-    margin: 20px 0;
-    background-color:#0a0a0a ;
-    height: 100%;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center !important;
-}
-
-.project-card h2 {
-    font-size: calc(1.3125rem + 0.75vw);
-    color: #fafafa;
-}
-
-.project-card h4 {
-    font-size: 0.75rem;
-    text-transform: capitalize;
-    color: #fafafa;
-}
 
 /* footer */
 #footer {
     padding: 50px 0;
+    background-color: #262626;
+    border-radius: 50px 50px 0  0;
 }
 
 .footer-header {
@@ -526,6 +479,40 @@ h1, h2, h3 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 32px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: start;
+    margin: 20px 0;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.contact-img i {
+    background-color: #ff751f;
+    color: white;
+    padding: 6px;
+    font-size: 27px;
+    border-radius: 10px;
+}
+
+.contact-contect {
+    margin-left: 20px;
+}
+
+.contact-contect h2 {
+    font-size: 1rem;
+    color: #ff751f;
+    text-transform: capitalize;
+}
+
+.contact-contect p a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #fafafa;
 }
 
 .form-group {
