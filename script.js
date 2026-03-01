@@ -160,15 +160,15 @@ const translations = {
         lang: "Gjuha",
         
         // Home section
-        available: "në dispozicion për punë!",
-        web_dev_part1: "Web Developer &",
-        web_dev_part2: "FullStack Developer.",
-        home_desc: "Unë dizajnoj dhe zhvilloj eksperienca web të nivelit të lartë për kompani që vlerësojnë vëmendjen ndaj detajeve.",
-        contact_me: "me kontakto",
+        available: "në dispozicion për bashkpunim!",
+        web_dev_part1: "Web Developing &",
+        web_dev_part2: "FullStack Developers.",
+        home_desc: "Ne dizenojme dhe zhvillojme eksperienca web të nivelit të lartë për kompani që vlerësojnë vëmendjen ndaj detajeve.",
+        contact_me: "na kontakto",
         
         // Tech section
-        tech_stack: "Teknologjitë e Mia",
-        tech_desc: "Punoj me teknologji moderne për të ndërtuar aplikacione web të shpejta, të shkallëzueshme dhe miqësore për përdoruesit. Nga zhvillimi frontend te arkitektura backend dhe databazat, fokusohem në kod të pastër dhe performancë.",
+        tech_stack: "Teknologjitë Tona",
+        tech_desc: "Punojme me teknologji moderne për të ndërtuar aplikacione web të shpejta, të shkallëzueshme dhe miqësore për përdoruesit. Nga zhvillimi frontend te arkitektura backend dhe databazat, fokusohemi në kod të pastër dhe performancë.",
         
         // Featured projects
         featured_projects: "projekte të zgjedhura",
@@ -178,26 +178,26 @@ const translations = {
         project1_title: "Kornizë E-Commerce Adaptive",
         project1_desc: "Eksperiencë blerjeje responsive me filtra dinamikë, komponentë modularë dhe UI të pastër.",
         project2_title: "Sistemi i Interface për Dashboard SaaS",
-        project2_desc: "ndërtoj një interface të shkallëzueshëm me grafikë të personalizuar, mikro-ndërveprime dhe modalitet të errët/të çelët.",
+        project2_desc: "ndërtojme një interface të shkallëzueshëm me grafikë të personalizuar, mikro-ndërveprime dhe modalitet të errët/të çelët.",
         project3_title: "Rrjet Portfolio i Optimizuar për Mobile",
-        project3_desc: "dizajnoj një rrjet të optimizuar për sjelljen e scroll-it në mobile, performancë të lartë me media.",
+        project3_desc: "dizajnojme një rrjet të optimizuar për sjelljen e scroll-it në mobile, performancë të lartë me media.",
         project4_title: "Fluksi UX për Rezervime Restoranti",
-        project4_desc: "thjeshtova rezervimin e tavolinave me flukse përdoruesi, sinkronizim kalendari dhe mikro-kopje feedback-u.",
+        project4_desc: "thjeshtojme rezervimin e tavolinave me flukse përdoruesi, sinkronizim kalendari dhe mikro-kopje feedback-u.",
         all_projects: "të gjitha projektet",
         
         // Services
-        my_services: "shërbimet e mia",
+        my_services: "shërbimet tona",
         services_title_part1: "rrit Prezencën Tënde",
-        services_title_part2: "Online me Mua",
-        services_desc: "Krijimi i Website-eve dhe Aplikacioneve të Fokusuara te Përdoruesi për Eksperienca Digjitale të Përshtatshme.",
+        services_title_part2: "Online me Ne",
+        services_desc: "Krijimi i Website-eve dhe Aplikacioneve të Fokusuara te Përdoruesi për Eksperienca Dixhitale të Përshtatshme.",
         service1_title: "Dizajn dhe Zhvillim Website-sh",
         service1_desc: "Dizajn dhe zhvillim website-sh të personalizuara sipas markës dhe nevojave të biznesit tuaj.",
         service2_title: "Kërkim dhe Analizë Përdoruesi",
         service2_desc: "Kryej kërkime me përdorues për të kuptuar audiencën tuaj të synuar, nevojat dhe sjelljet e tyre.",
-        service3_title: "Dizajn UI/UX",
-        service3_desc: "Dizajnoj interface përdoruesi (UI) që janë tërheqëse vizualisht dhe në linjë me identitetin e markës suaj.",
+        service3_title: "Design UI/UX",
+        service3_desc: "Design interface përdoruesi (UI) që janë tërheqëse vizualisht dhe në linjë me identitetin e markës suaj.",
         service4_title: "Zhvillim Full-Stack",
-        service4_desc: "Siguroj përputhshmëri ndër-shfletuesish dhe standarde të aksesueshmërisë.",
+        service4_desc: "Sigurojme përputhshmëri ndër-shfletuesish dhe standarde të aksesueshmërisë.",
         service5_title: "Mirëmbajtja dhe Mbështetje",
         service5_desc: "Përditësime, rregullime, kopje rezervë, monitorim dhe përmirësime të vazhdueshme. Faqja juaj e internetit mbetet e sigurt, e shpejtë dhe e besueshme shumë kohë pas lançimit.",
         service6_title: "Dyqane E-commerce që shesin",
@@ -214,10 +214,10 @@ const translations = {
         metric4: "Orë të Kursyera për Projekt",
         
         // Footer
-        get_in_touch: "Merr Kontakt",
-        footer_title_part1: "Jam Këtu për të Të",
+        get_in_touch: "Na Kontaktoni",
+        footer_title_part1: "Jemi Këtu për të Të",
         footer_title_part2: "Ndihmuar të Kesh Sukses.",
-        contact_me_title: "Kontakto Mua",
+        contact_me_title: "Na Kontakto",
         full_name: "Emri i plotë *",
         email_address: "Adresa email *",
         phone_number: "Numri i telefonit *",
@@ -225,7 +225,7 @@ const translations = {
         your_message: "Mesazhi juaj *",
         privacy_policy: "Duke dorëzuar këtë formular, pajtohem me politikën e privatësisë.",
         send_message: "Dërgo Mesazh",
-        copyright: "© Landi Xhelo. Të gjitha të drejtat e rezervuara."
+        copyright: "© devbyland. Të gjitha të drejtat e rezervuara."
     },
     en: {
         // Navigation
@@ -235,15 +235,15 @@ const translations = {
         lang: "Language",
         
         // Home section
-        available: "available for hiring!",
-        web_dev_part1: "Web Developer &",
-        web_dev_part2: "FullStack Developer.",
-        home_desc: "I design and develop high-end web experiences for design-driven companies that value attention to detail.",
-        contact_me: "contact me",
+        available: "available for collaboration !",
+        web_dev_part1: "Web Developing &",
+        web_dev_part2: "FullStack Developers.",
+        home_desc: "We design and develop high-end web experiences for design-driven companies that value attention to detail.",
+        contact_me: "contact Us",
         
         // Tech section
-        tech_stack: "My Tech Stack",
-        tech_desc: "I work with modern technologies to build fast, scalable and user-friendly web applications. From frontend development to backend architecture and databases, I focus on clean code and performance.",
+        tech_stack: "Our Tech Stack",
+        tech_desc: "We work with modern technologies to build fast, scalable and user-friendly web applications. From frontend development to backend architecture and databases, I focus on clean code and performance.",
         
         // Featured projects
         featured_projects: "featured projects",
@@ -261,9 +261,9 @@ const translations = {
         all_projects: "all projects",
         
         // Services
-        my_services: "my services",
+        my_services: "Our services",
         services_title_part1: "Elevate Your Online",
-        services_title_part2: "Presence with Me",
+        services_title_part2: "Presence with us",
         services_desc: "Crafting User-Centric Websites and Applications for Seamless Digital Experiences.",
         service1_title: "Website Design and Development",
         service1_desc: "Custom website design and development tailored to your brand and business needs.",
@@ -290,7 +290,7 @@ const translations = {
         
         // Footer
         get_in_touch: "Get In Touch",
-        footer_title_part1: "I'm Here To Help",
+        footer_title_part1: "We're Here To Help",
         footer_title_part2: "You Succeed.",
         contact_me_title: "Contact Me",
         full_name: "Full name *",
@@ -300,7 +300,7 @@ const translations = {
         your_message: "Your message *",
         privacy_policy: "By submitting this form, I agree to the privacy policy.",
         send_message: "Send Message",
-        copyright: "© Landi Xhelo. All rights reserved."
+        copyright: "© devbyland. All rights reserved."
     }
 };
 
