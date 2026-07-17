@@ -37,11 +37,24 @@ export function ContactPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      const contentType = res.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        setStatus("error");
+        setErrorMsg(
+          `Dërgimi dështoi. Na shkruaj në ${SITE.email} ose WhatsApp ${SITE.phoneDisplay}.`
+        );
+        return;
+      }
+
       const json = (await res.json()) as { ok?: boolean; error?: string };
 
       if (!res.ok || !json.ok) {
         setStatus("error");
-        setErrorMsg(json.error || "Dërgimi dështoi. Provo përsëri.");
+        setErrorMsg(
+          json.error ||
+            `Dërgimi dështoi. Na shkruaj në ${SITE.email} ose WhatsApp.`
+        );
         return;
       }
 
@@ -49,7 +62,9 @@ export function ContactPage() {
       form.reset();
     } catch {
       setStatus("error");
-      setErrorMsg("Diçka shkoi keq. Provo përsëri ose na shkruaj në email.");
+      setErrorMsg(
+        `Diçka shkoi keq. Na shkruaj në ${SITE.email} ose WhatsApp ${SITE.phoneDisplay}.`
+      );
     }
   }
 
