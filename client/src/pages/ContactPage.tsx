@@ -146,9 +146,7 @@ export function ContactPage() {
               <div className="contact-form">
                 {status === "success" && (
                   <div className="alert alert-success" role="alert">
-                    Mesazhi u dërgua me sukses. Faleminderit! Nëse është hera e
-                    parë, kontrollo edhe inbox-in e {SITE.email} për aktivizimin
-                    e FormSubmit.
+                    Mesazhi u dërgua me sukses. Faleminderit!
                   </div>
                 )}
                 {status === "error" && (
