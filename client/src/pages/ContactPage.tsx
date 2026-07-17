@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Seo } from "../components/Seo";
@@ -8,6 +9,12 @@ import { useReveal } from "../hooks/useReveal";
 import { SITE } from "../lib/site";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+const EMAILJS = {
+  serviceId: "service_gx2u7rr",
+  templateId: "template_wul0p0k",
+  publicKey: "kookDvy7kGgKMqao4",
+} as const;
 
 export function ContactPage() {
   useReveal();
@@ -28,35 +35,29 @@ export function ContactPage() {
       terms: data.get("terms") === "on",
     };
 
+    if (!payload.terms || payload.name.length < 2 || payload.message.length < 10) {
+      setStatus("error");
+      setErrorMsg("Plotëso fushat e detyrueshme (emri, mesazhi, kushtet).");
+      return;
+    }
+
     setStatus("loading");
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const contentType = res.headers.get("content-type") || "";
-      if (!contentType.includes("application/json")) {
-        setStatus("error");
-        setErrorMsg(
-          `Dërgimi dështoi. Na shkruaj në ${SITE.email} ose WhatsApp ${SITE.phoneDisplay}.`
-        );
-        return;
-      }
-
-      const json = (await res.json()) as { ok?: boolean; error?: string };
-
-      if (!res.ok || !json.ok) {
-        setStatus("error");
-        setErrorMsg(
-          json.error ||
-            `Dërgimi dështoi. Na shkruaj në ${SITE.email} ose WhatsApp.`
-        );
-        return;
-      }
+      // Browser-side EmailJS (same as legacy site) — works on Vercel without SMTP.
+      await emailjs.send(
+        EMAILJS.serviceId,
+        EMAILJS.templateId,
+        {
+          name: payload.name,
+          email: payload.email,
+          subject: payload.subject,
+          service: payload.service,
+          message: payload.message,
+        },
+        EMAILJS.publicKey
+      );
 
       setStatus("success");
       form.reset();
