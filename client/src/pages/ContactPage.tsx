@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
-import emailjs from "@emailjs/browser";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Seo } from "../components/Seo";
@@ -9,12 +8,6 @@ import { useReveal } from "../hooks/useReveal";
 import { SITE } from "../lib/site";
 
 type Status = "idle" | "loading" | "success" | "error";
-
-const EMAILJS = {
-  serviceId: "service_gx2u7rr",
-  templateId: "template_wul0p0k",
-  publicKey: "kookDvy7kGgKMqao4",
-} as const;
 
 export function ContactPage() {
   useReveal();
@@ -26,18 +19,16 @@ export function ContactPage() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const payload = {
-      name: String(data.get("name") ?? ""),
-      email: String(data.get("email") ?? ""),
-      subject: String(data.get("subject") ?? ""),
-      service: String(data.get("service") ?? ""),
-      message: String(data.get("message") ?? ""),
-      terms: data.get("terms") === "on",
-    };
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
+    const service = String(data.get("service") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+    const terms = data.get("terms") === "on";
 
-    if (!payload.terms || payload.name.length < 2 || payload.message.length < 10) {
+    if (!terms || name.length < 2 || message.length < 10 || !email) {
       setStatus("error");
-      setErrorMsg("Plotëso fushat e detyrueshme (emri, mesazhi, kushtet).");
+      setErrorMsg("Plotëso fushat e detyrueshme (emri, email, mesazhi, kushtet).");
       return;
     }
 
@@ -45,19 +36,34 @@ export function ContactPage() {
     setErrorMsg("");
 
     try {
-      // Browser-side EmailJS (same as legacy site) — works on Vercel without SMTP.
-      await emailjs.send(
-        EMAILJS.serviceId,
-        EMAILJS.templateId,
-        {
-          name: payload.name,
-          email: payload.email,
-          subject: payload.subject,
-          service: payload.service,
-          message: payload.message,
+      // FormSubmit works from the browser without EmailJS domain allowlists.
+      const res = await fetch(`https://formsubmit.co/ajax/${SITE.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        EMAILJS.publicKey
-      );
+        body: JSON.stringify({
+          name,
+          email,
+          _replyto: email,
+          _subject: subject || `Kontakt DevByLand: ${service}`,
+          service,
+          message,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+
+      const json = (await res.json()) as {
+        success?: string | boolean;
+        message?: string;
+        error?: string;
+      };
+
+      if (!res.ok || json.success === "false" || json.success === false) {
+        throw new Error(json.message || json.error || "Send failed");
+      }
 
       setStatus("success");
       form.reset();
@@ -140,7 +146,9 @@ export function ContactPage() {
               <div className="contact-form">
                 {status === "success" && (
                   <div className="alert alert-success" role="alert">
-                    Mesazhi u dërgua me sukses. Faleminderit!
+                    Mesazhi u dërgua me sukses. Faleminderit! Nëse është hera e
+                    parë, kontrollo edhe inbox-in e {SITE.email} për aktivizimin
+                    e FormSubmit.
                   </div>
                 )}
                 {status === "error" && (
