@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { CtaBand } from "../components/CtaBand";
+import { Seo } from "../components/Seo";
 import { useReveal } from "../hooks/useReveal";
 
 export function HomePage() {
@@ -9,6 +10,7 @@ export function HomePage() {
 
   return (
     <>
+      <Seo path="/" />
       <Navbar variant="home" />
 
       <header className="hero">

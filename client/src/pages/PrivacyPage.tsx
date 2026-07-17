@@ -1,9 +1,16 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { Seo } from "../components/Seo";
+import { SITE } from "../lib/site";
 
 export function PrivacyPage() {
   return (
     <>
+      <Seo
+        title="Privacy Policy"
+        description="Politika e privatësisë së DevByLand — si mbledhim dhe mbrojmë të dhënat tuaja."
+        path="/privacy"
+      />
       <Navbar />
       <section id="privacy">
         <div className="container">
@@ -67,7 +74,9 @@ export function PrivacyPage() {
               <b>6. Kontakt</b>
             </p>
             <p>
-              <a href="mailto:devbyland@gmail.com">devbyland@gmail.com</a>
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <br />
+              <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
             </p>
           </div>
         </div>

@@ -3,7 +3,9 @@ import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { Seo } from "../components/Seo";
 import { useReveal } from "../hooks/useReveal";
+import { SITE } from "../lib/site";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -53,6 +55,11 @@ export function ContactPage() {
 
   return (
     <>
+      <Seo
+        title="Kontakt"
+        description="Kontakto DevByLand për website, e-commerce, UX/UI dhe SEO. Email: devbyland@gmail.com · WhatsApp: +355 68 900 1257."
+        path="/contact"
+      />
       <Navbar />
       <header className="page-hero">
         <div className="container">
@@ -74,19 +81,44 @@ export function ContactPage() {
                 Vizioni yt fillon këtu
               </h2>
               <p className="section-text">
-                Email:{" "}
-                <a href="mailto:devbyland@gmail.com">devbyland@gmail.com</a>
+                Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </p>
+              <p className="section-text" style={{ marginTop: "0.75rem" }}>
+                Telefon:{" "}
+                <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
+              </p>
+              <p className="section-text" style={{ marginTop: "0.75rem" }}>
+                WhatsApp:{" "}
+                <a
+                  href={SITE.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {SITE.phoneDisplay}
+                </a>
               </p>
               <p className="section-text" style={{ marginTop: "0.75rem" }}>
                 Instagram:{" "}
                 <a
-                  href="https://www.instagram.com/devbyland/"
+                  href={SITE.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   @devbyland
                 </a>
               </p>
+              <div style={{ marginTop: "1.5rem" }}>
+                <a
+                  className="btn-brand"
+                  href={`${SITE.whatsappUrl}?text=${encodeURIComponent(
+                    "Përshëndetje DevByLand! Dua të flasim për një projekt."
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shkruaj në WhatsApp
+                </a>
+              </div>
             </div>
             <div className="col-lg-7 reveal reveal-delay-1">
               <div className="contact-form">

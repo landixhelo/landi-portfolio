@@ -1,9 +1,16 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { Seo } from "../components/Seo";
+import { SITE } from "../lib/site";
 
 export function TermsPage() {
   return (
     <>
+      <Seo
+        title="Terms & Conditions"
+        description="Kushtet e përdorimit të faqes dhe shërbimeve DevByLand."
+        path="/terms"
+      />
       <Navbar />
       <section id="termss">
         <div className="container">
@@ -76,7 +83,9 @@ export function TermsPage() {
               <b>8. Kontakt</b>
             </p>
             <p>
-              <a href="mailto:devbyland@gmail.com">devbyland@gmail.com</a>
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <br />
+              <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
             </p>
           </div>
         </div>

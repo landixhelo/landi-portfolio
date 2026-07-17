@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SITE } from "../lib/site";
 
 type Props = {
   showExtraLinks?: boolean;
@@ -15,7 +16,9 @@ export function Footer({ showExtraLinks = false }: Props) {
             <p className="site-footer__brand">
               DevBy<span>Land</span>
             </p>
-            <p>Web development & SEO për biznese që duan të rriten digjitalisht.</p>
+            <p>
+              Web development & SEO për biznese që duan të rriten digjitalisht.
+            </p>
           </div>
           <div>
             <h4>Navigim</h4>
@@ -51,23 +54,37 @@ export function Footer({ showExtraLinks = false }: Props) {
             <h4>Kontakt</h4>
             <ul>
               <li>
-                <a href="mailto:devbyland@gmail.com">devbyland@gmail.com</a>
+                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </li>
+              <li>
+                <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/devbyland/"
+                  href={SITE.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Instagram
                 </a>
               </li>
-              <li>Bulevardi Dëshmorët e Kombit</li>
+              <li>{SITE.address}</li>
             </ul>
           </div>
         </div>
         <div className="site-footer__bottom">
-          <span>© {year} DevByLand</span>
+          <span>
+            © {year} {SITE.name}
+          </span>
           <span>
             <Link to="/privacy">Privacy</Link> · <Link to="/terms">Terms</Link>
           </span>

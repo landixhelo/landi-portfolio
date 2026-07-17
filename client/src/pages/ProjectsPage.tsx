@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { CtaBand } from "../components/CtaBand";
+import { Seo } from "../components/Seo";
 import { useReveal } from "../hooks/useReveal";
 
 const tagStyle = {
@@ -25,6 +26,11 @@ export function ProjectsPage() {
 
   return (
     <>
+      <Seo
+        title="Projekte"
+        description="Portfolio DevByLand — Stitch Bear e-commerce, Tavolina bar-restorant dhe AutoRent platformë qiraje makinash."
+        path="/projects"
+      />
       <Navbar />
       <header className="page-hero">
         <div className="container">

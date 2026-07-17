@@ -1,4 +1,5 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
+import { SITE } from "../lib/site";
 
 type Props = {
   variant?: "home" | "inner";
@@ -13,8 +14,8 @@ export function Navbar({ variant = "inner" }: Props) {
     <nav className="navbar navbar-expand-lg site-nav">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <img className="brand-mark" src="/img/logo.png" alt="DevByLand" />
-          <span className="brand-name">DevByLand</span>
+          <img className="brand-mark" src="/img/logo.png" alt={SITE.name} />
+          <span className="brand-name">{SITE.name}</span>
         </Link>
         <button
           className="navbar-toggler"
@@ -78,6 +79,16 @@ export function Navbar({ variant = "inner" }: Props) {
               >
                 Kontakt
               </NavLink>
+            </li>
+            <li className="nav-item d-none d-lg-block">
+              <a
+                className="nav-link"
+                href={SITE.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
             </li>
             <li className="nav-item">
               <Link className="nav-cta" to="/contact">
