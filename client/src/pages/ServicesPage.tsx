@@ -1,3 +1,4 @@
+import { type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
@@ -35,43 +36,40 @@ export function ServicesPage() {
         jsonLd={jsonLd}
       />
       <Navbar />
+
       <header className="page-hero">
         <div className="container">
-          <p className="section-label">{SERVICES_SECTION.label}</p>
+          <p className="eyebrow">{SERVICES_SECTION.label}</p>
           <h1>{SERVICES_SECTION.title}</h1>
-          <p>{SERVICES_SECTION.text}</p>
+          <p className="section-intro">{SERVICES_SECTION.text}</p>
         </div>
       </header>
 
       <section className="section">
         <div className="container">
-          <div className="service-detail-list">
-            {SERVICES.map((service, i) => (
+          <div className="service-grid">
+            {SERVICES.map((service, index) => (
               <article
-                className={`service-detail-row reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
+                className="service-card reveal"
                 key={service.slug}
                 id={service.slug}
+                style={{ "--reveal-delay": `${(index % 3) * 90}ms` } as CSSProperties}
               >
-                <div>
-                  <p className="section-label">{service.shortName}</p>
-                  <h2>{service.h1}</h2>
-                  <p>{service.intro}</p>
-                  <ul className="service-detail-bullets">
-                    {service.bullets.slice(0, 4).map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                  <div className="service-detail-actions">
-                    <Link
-                      className="btn-brand"
-                      to={`/services/${service.slug}`}
-                    >
-                      More about {service.shortName}
-                    </Link>
-                    <Link className="link-arrow" to="/contact">
-                      Get a quote →
-                    </Link>
-                  </div>
+                <div className="service-number">0{index + 1}</div>
+                <h3>{service.h1}</h3>
+                <p>{service.intro}</p>
+                <ul className="inner-bullets">
+                  {service.bullets.slice(0, 4).map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+                <div className="inner-actions">
+                  <Link className="btn btn-primary" to={`/services/${service.slug}`}>
+                    More about {service.shortName}
+                  </Link>
+                  <Link className="text-link" to="/contact">
+                    Get a quote →
+                  </Link>
                 </div>
               </article>
             ))}
@@ -79,42 +77,47 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section className="section section--paper-deep" id="packages">
+      <section className="section pricing-section" id="packages">
         <div className="container">
-          <div className="section-head reveal">
-            <p className="section-label">Pricing</p>
-            <h2 className="section-title">
-              Pick the plan that fits your business
-            </h2>
-            <p className="section-text">
+          <header className="section-heading reveal">
+            <p className="eyebrow">Pricing</p>
+            <h2>Pick the plan that fits your business</h2>
+            <p className="section-intro">
               Fixed-price quotes. Prices in euro, no hidden costs.
             </p>
-          </div>
-          <div className="package-grid">
-            {PACKAGES.map((pkg, i) => (
-              <div
-                className={`package-tier${pkg.featured ? " package-tier--featured" : ""} reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
+          </header>
+          <div className="pricing-grid">
+            {PACKAGES.map((pkg, index) => (
+              <article
+                className={`price-card reveal ${pkg.featured ? "featured" : ""}`}
                 key={pkg.name}
+                style={{ "--reveal-delay": `${index * 100}ms` } as CSSProperties}
               >
-                <p className="package-tier__name">{pkg.name}</p>
-                <h3>{pkg.price}</h3>
-                <p className="package-tier__desc">{pkg.desc}</p>
+                {pkg.featured && <span className="popular-badge">Most popular</span>}
+                <h3>{pkg.name}</h3>
+                <p className="price">
+                  <strong>{pkg.price}</strong>
+                </p>
+                <p className="price-desc">{pkg.desc}</p>
                 <ul>
                   {pkg.features.map((f) => (
                     <li key={f}>{f}</li>
                   ))}
                 </ul>
-                <Link className="btn-brand" to="/contact">
+                <Link
+                  className={`btn ${pkg.featured ? "btn-primary" : "btn-outline"}`}
+                  to="/contact"
+                >
                   Get a quote
                 </Link>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       <CtaBand title={CTA.mid.title} text={CTA.mid.text} cta={CTA.mid.cta} />
-      <Footer showExtraLinks />
+      <Footer />
     </>
   );
 }

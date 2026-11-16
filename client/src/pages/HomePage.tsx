@@ -3,7 +3,6 @@ import type { CSSProperties, FormEvent, MouseEvent, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
 import { SITE } from "../lib/site";
-import "../landing.css";
 
 type Language = "sq" | "en";
 type IconName =
@@ -730,7 +729,7 @@ export function HomePage() {
   };
 
   return (
-    <div className="landing-shell">
+    <>
       <Seo
         path="/"
         title={SITE.defaultTitle}
@@ -1334,7 +1333,7 @@ export function HomePage() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 

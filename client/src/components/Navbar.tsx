@@ -1,139 +1,87 @@
-import { NavLink, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { SITE } from "../lib/site";
 
-type Props = {
-  variant?: "home" | "inner";
-};
+const links = [
+  { to: "/services", label: "Services" },
+  { to: "/projects", label: "Work" },
+  { to: "/contact", label: "Contact" },
+] as const;
 
-declare global {
-  interface Window {
-    bootstrap?: {
-      Collapse: {
-        getOrCreateInstance: (
-          el: Element,
-          opts?: { toggle?: boolean }
-        ) => { hide: () => void };
-      };
+export function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
     };
-  }
-}
+  }, [menuOpen]);
 
-function closeMobileNav() {
-  const el = document.getElementById("mainNav");
-  if (!el?.classList.contains("show")) return;
-
-  const Collapse = window.bootstrap?.Collapse;
-  if (Collapse) {
-    Collapse.getOrCreateInstance(el, { toggle: false }).hide();
-    return;
-  }
-
-  el.classList.remove("show");
-  document
-    .querySelector('.navbar-toggler[aria-controls="mainNav"]')
-    ?.setAttribute("aria-expanded", "false");
-}
-
-export function Navbar({ variant = "inner" }: Props) {
   return (
-    <nav className="navbar navbar-expand-lg site-nav">
-      <div className="container">
-        <Link className="navbar-brand" to="/" onClick={closeMobileNav}>
-          <img className="brand-mark" src="/img/logo.png" alt={SITE.name} />
-          <span className="brand-name">{SITE.name}</span>
+    <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+      <div className="nav-wrap">
+        <Link className="logo logo-light" to="/" aria-label={`${SITE.name} home`}>
+          <span className="logo-mark">D</span>
+          <span>
+            DevBy<span>Land</span>
+          </span>
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Menu"
+
+        <nav
+          className={menuOpen ? "nav-links open" : "nav-links"}
+          aria-label="Main navigation"
         >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="mainNav">
-          <ul className="navbar-nav ms-auto align-items-lg-center">
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link${isActive ? " is-active" : ""}`
-                }
-                to="/services"
-                onClick={closeMobileNav}
-              >
-                Services
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link${isActive ? " is-active" : ""}`
-                }
-                to="/projects"
-                onClick={closeMobileNav}
-              >
-                Work
-              </NavLink>
-            </li>
-            {variant === "home" && (
-              <>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="#process"
-                    onClick={closeMobileNav}
-                  >
-                    Process
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="#packages"
-                    onClick={closeMobileNav}
-                  >
-                    Pricing
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#faq" onClick={closeMobileNav}>
-                    FAQ
-                  </a>
-                </li>
-              </>
-            )}
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link${isActive ? " is-active" : ""}`
-                }
-                to="/contact"
-                onClick={closeMobileNav}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link d-lg-none"
-                href={SITE.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobileNav}
-              >
-                WhatsApp
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-cta" to="/contact" onClick={closeMobileNav}>
-                Get a free quote
-              </Link>
-            </li>
-          </ul>
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) => (isActive ? "is-active" : undefined)}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="nav-actions">
+          <Link className="btn btn-primary nav-cta" to="/contact">
+            Get a free quote
+          </Link>
+          <button
+            className="menu-toggle"
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            <svg
+              aria-hidden="true"
+              fill="none"
+              height="20"
+              viewBox="0 0 24 24"
+              width="20"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              {menuOpen ? (
+                <path d="m6 6 12 12M18 6 6 18" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

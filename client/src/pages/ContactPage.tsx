@@ -1,5 +1,4 @@
-import { useState } from "react";
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
@@ -83,197 +82,105 @@ export function ContactPage() {
         keywords={`contact DevByLand, website quote Tirana, ${SITE.keywords}`}
       />
       <Navbar />
+
       <header className="page-hero">
         <div className="container">
-          <p className="section-label">Contact</p>
+          <p className="eyebrow">Contact</p>
           <h1>Get a free quote</h1>
-          <p>
+          <p className="section-intro">
             Tell us about your project and get a clear quote within 24 hours.
-            Starter from €150 · Web + features from €350 · Full platform from
-            €550.
+            Starter from €150 · Web + features from €350 · Full platform from €550.
           </p>
         </div>
       </header>
 
-      <section id="contact-us">
-        <div className="container">
-          <div className="row g-4 align-items-start">
-            <div className="col-lg-5 reveal">
-              <p className="section-label">Reach us</p>
-              <h2 className="section-title" style={{ maxWidth: "14ch" }}>
-                Your project starts here
-              </h2>
-              <p className="section-text">
-                Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              </p>
-              <p className="section-text" style={{ marginTop: "0.75rem" }}>
-                Phone:{" "}
-                <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
-              </p>
-              <p className="section-text" style={{ marginTop: "0.75rem" }}>
-                WhatsApp:{" "}
-                <a
-                  href={SITE.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {SITE.phoneDisplay}
-                </a>
-              </p>
-              <p className="section-text" style={{ marginTop: "0.75rem" }}>
-                Instagram:{" "}
-                <a
-                  href={SITE.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  @devbyland
-                </a>
-              </p>
-              <div style={{ marginTop: "1.5rem" }}>
-                <a
-                  className="btn-brand"
-                  href={`${SITE.whatsappUrl}?text=${encodeURIComponent(
-                    "Hi DevByLand! I’d like to talk about a project."
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Message on WhatsApp
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-7 reveal reveal-delay-1">
-              <div className="contact-form">
-                {status === "success" && (
-                  <div className="alert alert-success" role="alert">
-                    Message sent successfully. Thank you!
-                  </div>
-                )}
-                {status === "error" && (
-                  <div className="alert alert-danger" role="alert">
-                    {errorMsg}
-                  </div>
-                )}
-                <form onSubmit={onSubmit}>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="mb-3 contact-fr">
-                        <label htmlFor="name" className="form-label required">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="name"
-                          name="name"
-                          placeholder="Your name"
-                          required
-                          minLength={2}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-3 contact-fr">
-                        <label htmlFor="email" className="form-label required">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          id="email"
-                          name="email"
-                          placeholder="you@company.com"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-3 contact-fr">
-                        <label htmlFor="subject" className="form-label">
-                          Subject
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="subject"
-                          name="subject"
-                          placeholder="Subject"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-3 contact-fr">
-                        <label htmlFor="service" className="form-label">
-                          Service
-                        </label>
-                        <select
-                          className="form-select form-control"
-                          id="service"
-                          name="service"
-                          defaultValue="Web Development"
-                        >
-                          <option value="Web Development">Web development</option>
-                          <option value="UX/UI Design">UX / UI design</option>
-                          <option value="E-commerce">E-commerce</option>
-                          <option value="SEO">SEO and performance</option>
-                          <option value="Custom systems">Custom systems</option>
-                          <option value="Maintenance">Maintenance</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="mb-3 contact-fr">
-                        <label htmlFor="message" className="form-label">
-                          Message
-                        </label>
-                        <textarea
-                          className="form-control"
-                          id="message"
-                          name="message"
-                          rows={5}
-                          placeholder="Tell us about your project"
-                          style={{ height: "auto" }}
-                          required
-                          minLength={10}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-7">
-                      <div className="terms">
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="terms"
-                            name="terms"
-                            required
-                          />
-                          <label className="form-check-label" htmlFor="terms">
-                            By submitting, you agree to our{" "}
-                            <Link to="/terms">Terms</Link> and{" "}
-                            <Link to="/privacy">Privacy</Link>.
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-5 text-md-end">
-                      <button
-                        type="submit"
-                        className="btn-brand"
-                        disabled={status === "loading"}
-                      >
-                        {status === "loading" ? "Sending..." : "Send message"}
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
+      <section className="contact-section" id="contact-us">
+        <div className="container contact-grid">
+          <div className="contact-copy reveal">
+            <p className="eyebrow">Reach us</p>
+            <h2>Your project starts here</h2>
+            <p>
+              Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <br />
+              Phone: <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
+              <br />
+              WhatsApp:{" "}
+              <a href={SITE.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                {SITE.phoneDisplay}
+              </a>
+            </p>
+            <a
+              href={`${SITE.whatsappUrl}?text=${encodeURIComponent(
+                "Hi DevByLand! I’d like to talk about a project."
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Message on WhatsApp
+            </a>
           </div>
+
+          <form className="contact-form reveal" onSubmit={onSubmit}>
+            {status === "success" && (
+              <p className="form-alert form-alert--ok">Message sent successfully. Thank you!</p>
+            )}
+            {status === "error" && (
+              <p className="form-alert form-alert--err">{errorMsg}</p>
+            )}
+
+            <div className="field-row">
+              <label>
+                Name
+                <input name="name" type="text" autoComplete="name" required minLength={2} placeholder="Your name" />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" autoComplete="email" required placeholder="you@company.com" />
+              </label>
+            </div>
+            <div className="field-row">
+              <label>
+                Subject
+                <input name="subject" type="text" placeholder="Subject" />
+              </label>
+              <label>
+                Service
+                <select name="service" defaultValue="Web Development">
+                  <option value="Web Development">Web development</option>
+                  <option value="UX/UI Design">UX / UI design</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="SEO">SEO and performance</option>
+                  <option value="Custom systems">Custom systems</option>
+                  <option value="Maintenance">Maintenance</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Message
+              <textarea
+                name="message"
+                required
+                minLength={10}
+                rows={5}
+                placeholder="Tell us about your project"
+              />
+            </label>
+            <label className="terms-check">
+              <input type="checkbox" name="terms" required />
+              <span>
+                By submitting, you agree to our <Link to="/terms">Terms</Link> and{" "}
+                <Link to="/privacy">Privacy</Link>.
+              </span>
+            </label>
+            <button className="btn btn-primary btn-large" type="submit" disabled={status === "loading"}>
+              {status === "loading" ? "Sending…" : "Send message"}
+            </button>
+            <small>We reply within one business day.</small>
+          </form>
         </div>
       </section>
+
       <Footer />
     </>
   );
