@@ -3,9 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import { SITE } from "../lib/site";
 
 const links = [
-  { to: "/services", label: "Services" },
-  { to: "/projects", label: "Work" },
-  { to: "/contact", label: "Contact" },
+  { to: "/services", label: "Services", kind: "route" },
+  { to: "/projects", label: "Work", kind: "route" },
+  { to: "/#process", label: "Process", kind: "hash" },
+  { to: "/#pricing", label: "Pricing", kind: "hash" },
+  { to: "/contact", label: "Contact", kind: "route" },
 ] as const;
 
 export function Navbar() {
@@ -40,16 +42,22 @@ export function Navbar() {
           className={menuOpen ? "nav-links open" : "nav-links"}
           aria-label="Main navigation"
         >
-          {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) => (isActive ? "is-active" : undefined)}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
+          {links.map((link) =>
+            link.kind === "route" ? (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) => (isActive ? "is-active" : undefined)}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </NavLink>
+            ) : (
+              <Link key={link.to} to={link.to} onClick={() => setMenuOpen(false)}>
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="nav-actions">

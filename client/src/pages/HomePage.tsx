@@ -631,6 +631,15 @@ export function HomePage() {
   }, [language]);
 
   useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+    const timer = window.setTimeout(() => {
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const elements = mainRef.current?.querySelectorAll(".reveal");
     if (!elements || !("IntersectionObserver" in window)) return;
     const observer = new IntersectionObserver(
@@ -740,15 +749,26 @@ export function HomePage() {
         <div className="nav-wrap">
           <Logo light />
           <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label="Main navigation">
-            {t.nav.map((item, index) => (
-              <a
-                key={item}
-                href={["#services", "#work", "#process", "#pricing", "#faq", "#contact"][index]}
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+            {(
+              [
+                { label: t.nav[0], to: "/services" },
+                { label: t.nav[1], to: "/projects" },
+                { label: t.nav[2], href: "#process" },
+                { label: t.nav[3], href: "#pricing" },
+                { label: t.nav[4], href: "#faq" },
+                { label: t.nav[5], to: "/contact" },
+              ] as const
+            ).map((item) =>
+              "to" in item ? (
+                <Link key={item.label} to={item.to} onClick={() => setMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ) : (
+                <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}>
+                  {item.label}
+                </a>
+              )
+            )}
           </nav>
           <div className="nav-actions">
             <div className="lang-switch" aria-label="Language selector">
@@ -763,9 +783,9 @@ export function HomePage() {
                 </button>
               ))}
             </div>
-            <a className="btn btn-primary nav-cta" href="#contact">
+            <Link className="btn btn-primary nav-cta" to="/contact" onClick={() => setMenuOpen(false)}>
               {t.quote}
-            </a>
+            </Link>
             <button
               className="menu-toggle"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -1289,17 +1309,18 @@ export function HomePage() {
           </div>
           <div>
             <h3>{t.services}</h3>
-            <a href="#services">Websites</a>
-            <a href="#services">E-commerce</a>
-            <a href="#services">Custom systems</a>
-            <a href="#services">Maintenance</a>
+            <Link to="/services/web-development">Websites</Link>
+            <Link to="/services/ecommerce">E-commerce</Link>
+            <Link to="/services/custom-systems">Custom systems</Link>
+            <Link to="/services/maintenance">Maintenance</Link>
           </div>
           <div>
             <h3>{t.company}</h3>
-            <a href="#work">{t.nav[1]}</a>
+            <Link to="/projects">{t.nav[1]}</Link>
             <a href="#process">{t.nav[2]}</a>
             <a href="#pricing">{t.nav[3]}</a>
             <a href="#faq">FAQ</a>
+            <Link to="/contact">{t.contact}</Link>
           </div>
           <div>
             <h3>{t.contact}</h3>
