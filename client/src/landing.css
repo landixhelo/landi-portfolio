@@ -1349,22 +1349,39 @@ html {
   border-top: 1px solid var(--line);
 }
 .faq-item {
+  background: transparent;
+  border: 0;
   border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }
 .faq-item h3 {
   letter-spacing: -0.01em;
+  margin: 0;
 }
 .faq-item button {
   align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--ink);
+  cursor: pointer;
   display: flex;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: space-between;
+  outline: none;
   padding: 22px 2px;
   text-align: left;
   width: 100%;
 }
 .faq-item button:hover {
+  background: transparent;
   color: var(--orange-dark);
 }
 .faq-item button i {
@@ -2159,6 +2176,14 @@ select,
 textarea {
   font: inherit;
 }
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -2340,10 +2365,17 @@ img {
   color: #ffb4a8;
 }
 .legal-faq {
+  background: transparent;
+  border: 0;
   border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
   padding: 0;
 }
 .legal-faq summary {
+  background: transparent;
+  border: 0;
   cursor: pointer;
   font: 700 16px "Space Grotesk", sans-serif;
   list-style: none;
