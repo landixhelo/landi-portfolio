@@ -62,7 +62,7 @@ export function Navbar() {
 
         <div className="nav-actions">
           <Link className="btn btn-primary nav-cta" to="/contact">
-            Get a free quote
+            Get a quote
           </Link>
           <button
             className="menu-toggle"

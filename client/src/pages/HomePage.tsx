@@ -151,12 +151,13 @@ const copy = {
     processEyebrow: "Proces i qartë",
     processTitle: "Katër hapa. Asnjë surprizë.",
     processText: "Ti e di gjithmonë çfarë po ndodh, çfarë vjen më pas dhe kur do të jetë gati.",
-    pricingEyebrow: "Çmime transparente",
-    pricingTitle: "Zgjidh bazën. Ne e përshtatim për ty.",
-    pricingText: "Çmim fiks, pa kosto të fshehura. Oferta finale vjen pas një bisede të shkurtër.",
+    pricingEyebrow: "Çmime indikative",
+    pricingTitle: "Nga €800. Ofertë fikse brenda 24 orëve.",
+    pricingText:
+      "Këto janë pika nisjeje. Oferta finale fikse vjen pas një briefing-u të shkurtër — zakonisht brenda një dite pune.",
     from: "Nga",
-    popular: "Më i zgjedhuri",
-    choose: "Kërko këtë plan",
+    popular: "Më i kërkuari",
+    choose: "Kërko ofertë",
     faqEyebrow: "Pyetje të shpeshta",
     faqTitle: "Përgjigje të qarta, para se të fillojmë.",
     finalEyebrow: "Ke një ide?",
@@ -165,6 +166,9 @@ const copy = {
       "Na trego shkurt çfarë të duhet. Do të marrësh një përgjigje të qartë brenda një dite pune.",
     name: "Emri",
     email: "Email",
+    companyField: "Kompania",
+    projectType: "Lloji i projektit",
+    budget: "Buxheti",
     message: "Mesazhi",
     send: "Dërgo kërkesën",
     footerText:
@@ -177,59 +181,64 @@ const copy = {
   },
   en: {
     nav: ["Services", "Work", "Process", "Pricing", "FAQ", "Contact"],
-    quote: "Get a free quote",
-    heroEyebrow: "Web studio from Tirana • Built for growing businesses",
+    quote: "Get a quote",
+    heroEyebrow: "Web studio · Tirana · CET · Working with clients across Europe",
     heroTitle: (
       <>
-        Fast websites that <span>bring you customers.</span>
+        Websites that help growing businesses <span>get more customers.</span>
       </>
     ),
     heroText:
-      "We design and build websites, online stores and booking systems that are clear, fast and ready for business.",
+      "We build websites, online stores and booking systems for hospitality, rental and retail. Clear scope. Fixed price. Reply within 24 hours.",
     whatsapp: "Chat on WhatsApp",
-    trust: ["Reply within 24h", "Essential SEO included", "Fixed pricing"],
-    techLabel: "Modern technology. No unnecessary dependencies.",
-    servicesEyebrow: "What we do",
-    servicesTitle: "Everything your business needs to perform online.",
+    trust: ["Quote within 24h", "Essential SEO included", "You own the code"],
+    techLabel: "Modern stack. No unnecessary complexity.",
+    servicesEyebrow: "Services",
+    servicesTitle: "What we build for your business.",
     servicesText:
-      "From idea to launch and maintenance — one partner, with clear communication at every step.",
+      "Design, development and technical SEO in one place — from brief to launch and support.",
     stats: [
       ["30+", "projects delivered"],
       ["24h", "average response time"],
       ["20+", "businesses supported"],
       ["4+", "years of experience"],
     ],
-    workEyebrow: "Selected work",
-    workTitle: "Real problems. Solutions that work.",
+    workEyebrow: "Case studies",
+    workTitle: "Real problems. Working products.",
     workText:
-      "Every project starts with the business goal — not a template. Here are three types of products we build.",
+      "Each project starts from a business goal — more bookings, cleaner ops, or online sales.",
     viewCase: "View case study",
     problem: "Problem",
-    solution: "Solution",
+    solution: "What we built",
     result: "Result",
     feedbackEyebrow: "Client feedback",
-    feedbackTitle: "Trust is earned through good work.",
-    placeholder: "Demo profile — replace with a verified testimonial before publishing.",
-    processEyebrow: "A clear process",
-    processTitle: "Four steps. Zero surprises.",
+    feedbackTitle: "What clients say about working with us.",
+    placeholder: "Placeholder quote — replace with a verified testimonial before publishing.",
+    processEyebrow: "Process",
+    processTitle: "Four steps. No surprises.",
     processText: "You always know what is happening, what comes next and when it will be ready.",
-    pricingEyebrow: "Transparent pricing",
-    pricingTitle: "Choose a base. We tailor it to you.",
-    pricingText: "Fixed price, no hidden costs. Your final quote follows a short discovery call.",
+    pricingEyebrow: "Indicative pricing",
+    pricingTitle: "Starting prices. Fixed quote in 24 hours.",
+    pricingText:
+      "These are starting points. Your final fixed-price quote follows a short brief — usually within one business day.",
     from: "From",
-    popular: "Most popular",
-    choose: "Choose this plan",
-    faqEyebrow: "Frequently asked",
-    faqTitle: "Clear answers, before we start.",
-    finalEyebrow: "Have an idea?",
-    finalTitle: "Let’s build it together.",
-    finalText: "Tell us briefly what you need. You will get a clear reply within one business day.",
+    popular: "Most requested",
+    choose: "Get a quote",
+    faqEyebrow: "FAQ",
+    faqTitle: "Clear answers before we start.",
+    finalEyebrow: "Get a quote",
+    finalTitle: "Tell us what you need.",
+    finalText:
+      "Share a short brief. You get a clear fixed-price reply within one business day (CET).",
     name: "Name",
     email: "Email",
+    companyField: "Company",
+    projectType: "Project type",
+    budget: "Budget range",
     message: "Message",
     send: "Send request",
     footerText:
-      "Fast websites and web systems for businesses that want more customers and less manual work.",
+      "Websites and web systems for businesses that want more customers and less manual work.",
     company: "Company",
     services: "Services",
     contact: "Contact",
@@ -248,12 +257,12 @@ const serviceData = {
     ["Mirëmbajtje", "Përditësime, monitorim dhe ndihmë kur të duhet.", "support"],
   ],
   en: [
-    ["Websites", "Fast, modern websites optimised to turn visits into enquiries.", "layers"],
-    ["E-commerce", "Online stores that make buying simple, fast and secure.", "cart"],
-    ["UX/UI Design", "Clear experiences that guide visitors toward action.", "spark"],
-    ["SEO", "Technical structure and essential content to help you rank.", "search"],
-    ["Custom systems", "Booking, rental, dashboards and workflows built for you.", "code"],
-    ["Maintenance", "Updates, monitoring and help whenever you need it.", "support"],
+    ["Business websites", "Clear sites that explain what you do and turn visits into enquiries.", "layers"],
+    ["E-commerce", "Stores with catalogue, checkout and order management built to sell.", "cart"],
+    ["UX/UI design", "Interfaces that guide visitors to book, buy or contact you.", "spark"],
+    ["Technical SEO", "Solid structure and speed so customers can find you on Google.", "search"],
+    ["Custom systems", "Booking, rental, POS and admin panels that match how you work.", "code"],
+    ["Maintenance", "Updates, fixes and small improvements after launch.", "support"],
   ],
 } as const;
 
@@ -326,74 +335,80 @@ const projects = {
 
 const plans = {
   sq: [
-    [
-      "Starter",
-      "150",
-      [
-        "Landing page profesionale",
-        "Dizajn responsive",
-        "Formular kontakti",
-        "SEO bazë",
-        "Dorëzim i shpejtë",
+    {
+      name: "Faqe biznesi",
+      price: "800",
+      timeline: "Afati tipik: 2–4 javë",
+      features: [
+        "Deri në 6 faqe, mobile-first",
+        "Formular kontakti dhe CTA WhatsApp",
+        "SEO teknik bazë",
+        "Lançim në domain-in tënd",
       ],
-    ],
-    [
-      "Web + Features",
-      "350",
-      [
-        "Deri në 6 faqe",
-        "Dizajn i personalizuar",
-        "Integrime & funksione",
-        "CMS i thjeshtë",
-        "30 ditë mbështetje",
+      affects: "Faqe shtesë, gjuhë ose migrim përmbajtjeje ndikojnë te çmimi.",
+    },
+    {
+      name: "Dyqan online",
+      price: "2000",
+      timeline: "Afati tipik: 4–8 javë",
+      features: [
+        "Katalog produktesh",
+        "Checkout dhe pagesa",
+        "Admin për porosi",
+        "SEO bazë produktesh",
       ],
-    ],
-    [
-      "Full Platform",
-      "550",
-      [
-        "Sistem sipas biznesit",
-        "Login & role",
-        "Dashboard menaxhimi",
-        "Database & API",
-        "Trajnim dhe mbështetje",
+      affects: "Madhësia e katalogut, pagesat dhe dizajni ndikojnë te oferta.",
+    },
+    {
+      name: "Web app custom",
+      price: "3500",
+      timeline: "Afati tipik: 6–12 javë",
+      features: [
+        "Procese dhe role sipas biznesit",
+        "Dashboard dhe database",
+        "Integrime API",
+        "Trajnim dhe lançim",
       ],
-    ],
+      affects: "Scope-i, integrimet dhe rolet e përdoruesve përcaktojnë çmimin final.",
+    },
   ],
   en: [
-    [
-      "Starter",
-      "150",
-      [
-        "Professional landing page",
-        "Responsive design",
-        "Contact form",
-        "Essential SEO",
-        "Fast delivery",
+    {
+      name: "Business Website",
+      price: "800",
+      timeline: "Typical timeline: 2–4 weeks",
+      features: [
+        "Up to 6 pages, mobile-first",
+        "Contact form and WhatsApp CTA",
+        "Essential technical SEO",
+        "Launch on your domain",
       ],
-    ],
-    [
-      "Web + Features",
-      "350",
-      [
-        "Up to 6 pages",
-        "Custom design",
-        "Integrations & features",
-        "Simple CMS",
-        "30 days support",
+      affects: "Extra pages, languages or content migration change the price.",
+    },
+    {
+      name: "E-commerce Store",
+      price: "2,000",
+      timeline: "Typical timeline: 4–8 weeks",
+      features: [
+        "Product catalogue and categories",
+        "Checkout and payment integration",
+        "Admin for products and orders",
+        "Basic product SEO",
       ],
-    ],
-    [
-      "Full Platform",
-      "550",
-      [
-        "Custom business system",
-        "Login & roles",
-        "Admin dashboard",
-        "Database & API",
-        "Training and support",
+      affects: "Catalogue size, payments and custom design affect the quote.",
+    },
+    {
+      name: "Custom Web App",
+      price: "3,500",
+      timeline: "Typical timeline: 6–12 weeks",
+      features: [
+        "Custom workflows and roles",
+        "Admin dashboard and database",
+        "API integrations as needed",
+        "Training and launch support",
       ],
-    ],
+      affects: "Scope, integrations and user roles drive the final fixed price.",
+    },
   ],
 };
 
@@ -691,8 +706,17 @@ export function HomePage() {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
+    // Honeypot — bots fill this; humans never see it
+    if (String(data.get("company_website") ?? "").trim()) {
+      setFormStatus("success");
+      form.reset();
+      return;
+    }
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
+    const company = String(data.get("company") ?? "").trim();
+    const projectType = String(data.get("projectType") ?? "").trim();
+    const budget = String(data.get("budget") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
     if (name.length < 2 || !email || message.length < 10) {
       setFormStatus("error");
@@ -709,9 +733,12 @@ export function HomePage() {
         body: JSON.stringify({
           name,
           email,
-          _replyto: email,
-          _subject: `DevByLand enquiry from ${name}`,
+          company,
+          projectType,
+          budget,
           message,
+          _replyto: email,
+          _subject: `DevByLand quote: ${projectType || "project"} — ${name}`,
           _template: "table",
           _captcha: "false",
         }),
@@ -813,17 +840,26 @@ export function HomePage() {
               <h1
                 aria-label={
                   language === "en"
-                    ? "Fast websites that bring you customers."
+                    ? "Websites that help growing businesses get more customers."
                     : "Faqe interneti të shpejta që sjellin klientë."
                 }
               >
                 {(language === "en"
-                  ? ["Fast", "websites", "that", "bring", "you", "customers."]
+                  ? [
+                      "Websites",
+                      "that",
+                      "help",
+                      "growing",
+                      "businesses",
+                      "get",
+                      "more",
+                      "customers.",
+                    ]
                   : ["Faqe", "interneti", "të", "shpejta", "që", "sjellin", "klientë."]
                 ).map((word, index, words) => (
                   <span
                     className={index >= words.length - 2 ? "accent-word hero-word" : "hero-word"}
-                    key={`${language}-${word}`}
+                    key={`${language}-${word}-${index}`}
                     style={{ "--word-delay": `${0.12 + index * 0.07}s` } as CSSProperties}
                   >
                     {word}&nbsp;
@@ -832,10 +868,10 @@ export function HomePage() {
               </h1>
               <p className="hero-text">{t.heroText}</p>
               <div className="hero-actions">
-                <a className="btn btn-primary btn-large" href="#contact">
+                <Link className="btn btn-primary btn-large" to="/contact">
                   {t.quote}
                   <Icon name="arrow" />
-                </a>
+                </Link>
                 <a
                   className="btn btn-secondary btn-large"
                   href={WHATSAPP_URL}
@@ -1152,41 +1188,43 @@ export function HomePage() {
               text={t.pricingText}
             />
             <div className="pricing-grid">
-              {plans[language].map(([name, price, features], index) => (
+              {plans[language].map((plan, index) => (
                 <article
                   className={`price-card reveal ${index === 1 ? "featured" : ""}`}
-                  key={name as string}
+                  key={plan.name}
                   style={{ "--reveal-delay": `${index * 100}ms` } as CSSProperties}
                 >
                   {index === 1 && <span className="popular-badge">{t.popular}</span>}
-                  <h3>{name as string}</h3>
+                  <h3>{plan.name}</h3>
                   <p className="price">
                     <small>{t.from}</small>
-                    <strong>€{price as string}</strong>
+                    <strong>€{plan.price}</strong>
                   </p>
+                  <p className="price-desc">{plan.timeline}</p>
                   <ul>
-                    {(features as string[]).map((feature) => (
+                    {plan.features.map((feature) => (
                       <li key={feature}>
                         <Icon name="check" size={17} />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <a
+                  <p className="price-desc">{plan.affects}</p>
+                  <Link
                     className={`btn ${index === 1 ? "btn-primary" : "btn-outline"}`}
-                    href="#contact"
+                    to="/contact"
                   >
                     {t.choose}
                     <Icon name="arrow" />
-                  </a>
+                  </Link>
                 </article>
               ))}
             </div>
             <p className="pricing-note">
               <Icon name="shield" size={18} />{" "}
               {language === "sq"
-                ? "Çmim fiks, pa kosto të fshehura."
-                : "Fixed price, no hidden costs."}
+                ? "Çmim fiks pas briefing-ut. Oferta brenda 24 orëve."
+                : "Fixed price after a short brief. Final quote within 24 hours."}
             </p>
           </div>
         </section>
@@ -1232,7 +1270,18 @@ export function HomePage() {
                 <Icon name="arrow" />
               </a>
             </div>
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit} noValidate={false}>
+              <div className="hp-field" aria-hidden="true">
+                <label>
+                  Company website
+                  <input
+                    name="company_website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </label>
+              </div>
               <div className="field-row">
                 <label>
                   {t.name}
@@ -1241,6 +1290,7 @@ export function HomePage() {
                     type="text"
                     autoComplete="name"
                     required
+                    minLength={2}
                     placeholder={language === "sq" ? "Emri yt" : "Your name"}
                   />
                 </label>
@@ -1256,13 +1306,49 @@ export function HomePage() {
                 </label>
               </div>
               <label>
+                {t.companyField}
+                <input
+                  name="company"
+                  type="text"
+                  autoComplete="organization"
+                  placeholder={language === "sq" ? "Emri i biznesit" : "Company name"}
+                />
+              </label>
+              <div className="field-row">
+                <label>
+                  {t.projectType}
+                  <select name="projectType" defaultValue="Business website" required>
+                    <option value="Business website">Business website</option>
+                    <option value="E-commerce store">E-commerce store</option>
+                    <option value="Booking / rental system">Booking / rental system</option>
+                    <option value="Admin / POS panel">Admin / POS panel</option>
+                    <option value="Web app">Web app</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+                <label>
+                  {t.budget}
+                  <select name="budget" defaultValue="Not sure yet" required>
+                    <option value="Under €1,000">Under €1,000</option>
+                    <option value="€1,000 – €2,500">€1,000 – €2,500</option>
+                    <option value="€2,500 – €5,000">€2,500 – €5,000</option>
+                    <option value="€5,000 – €10,000">€5,000 – €10,000</option>
+                    <option value="€10,000+">€10,000+</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </label>
+              </div>
+              <label>
                 {t.message}
                 <textarea
                   name="message"
                   required
+                  minLength={10}
                   rows={4}
                   placeholder={
-                    language === "sq" ? "Më duhet një faqe për..." : "I need a website for..."
+                    language === "sq"
+                      ? "Më duhet një faqe / sistem për..."
+                      : "I need a website or system for..."
                   }
                 />
               </label>

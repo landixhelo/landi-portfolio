@@ -29,10 +29,10 @@ export function ServicesPage() {
   return (
     <>
       <Seo
-        title="Services | Websites, E-commerce, UX/UI & SEO"
-        description={`${SERVICES_SECTION.title}. ${SERVICES_SECTION.text}`}
+        title="Services | Websites, E-commerce & Custom Web Apps"
+        description={`${SERVICES_SECTION.title}. Business websites from €800, e-commerce from €2,000, custom apps from €3,500.`}
         path="/services"
-        keywords={`${SITE.keywords}, web agency Albania`}
+        keywords={`${SITE.keywords}, web agency Europe`}
         jsonLd={jsonLd}
       />
       <Navbar />
@@ -80,10 +80,11 @@ export function ServicesPage() {
       <section className="section pricing-section" id="packages">
         <div className="container">
           <header className="section-heading reveal">
-            <p className="eyebrow">Pricing</p>
-            <h2>Pick the plan that fits your business</h2>
+            <p className="eyebrow">Indicative pricing</p>
+            <h2>Starting prices. Fixed quote in 24 hours.</h2>
             <p className="section-intro">
-              Fixed-price quotes. Prices in euro, no hidden costs.
+              These are starting points for European clients. Your final
+              fixed-price quote follows a short brief.
             </p>
           </header>
           <div className="pricing-grid">
@@ -93,17 +94,19 @@ export function ServicesPage() {
                 key={pkg.name}
                 style={{ "--reveal-delay": `${index * 100}ms` } as CSSProperties}
               >
-                {pkg.featured && <span className="popular-badge">Most popular</span>}
+                {pkg.featured && <span className="popular-badge">Most requested</span>}
                 <h3>{pkg.name}</h3>
                 <p className="price">
                   <strong>{pkg.price}</strong>
                 </p>
+                <p className="price-desc">{pkg.timeline}</p>
                 <p className="price-desc">{pkg.desc}</p>
                 <ul>
                   {pkg.features.map((f) => (
                     <li key={f}>{f}</li>
                   ))}
                 </ul>
+                <p className="price-desc">{pkg.affects}</p>
                 <Link
                   className={`btn ${pkg.featured ? "btn-primary" : "btn-outline"}`}
                   to="/contact"

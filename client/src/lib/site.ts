@@ -14,17 +14,17 @@ export const SITE = {
   },
   ogImage: "https://www.devbyland.com/img/logo.png",
   defaultTitle:
-    "DevByLand | Websites & web apps that bring you customers",
+    "DevByLand | Websites & web apps for hospitality, rental and retail",
   defaultDescription:
-    "Web development studio in Tirana, Albania. We build fast websites, e-commerce and booking systems for hospitality, rental and retail — React, Node.js, SEO included.",
+    "Tirana-based web studio working with European clients on CET hours. Business websites from €800, e-commerce from €2,000, custom web apps from €3,500. Fixed quote within 24 hours.",
   keywords: [
-    "web development Albania",
-    "website agency Tirana",
-    "e-commerce Albania",
-    "UX UI design Tirana",
-    "SEO Albania",
-    "React developer Albania",
-    "custom web apps",
+    "web developer Albania",
+    "website agency Europe",
+    "e-commerce developer",
+    "booking system development",
+    "hospitality website",
+    "rental booking software",
+    "React Node.js agency",
     "DevByLand",
   ].join(", "),
 } as const;
@@ -71,7 +71,7 @@ export const SERVICES: ServicePage[] = [
     faqs: [
       {
         q: "How much does a website cost?",
-        a: "Starter websites start from €150. Web + features from €350. After a short briefing we send a fixed-price quote.",
+        a: "Business websites start from €800. E-commerce from €2,000. Custom web apps from €3,500. After a short briefing we send a fixed-price quote.",
       },
       {
         q: "How long does development take?",
@@ -129,7 +129,7 @@ export const SERVICES: ServicePage[] = [
     faqs: [
       {
         q: "How much does an online store cost?",
-        a: "Full platforms start from €550, depending on catalog size, payments and admin needs. We send a fixed quote after briefing.",
+        a: "Online stores start from €2,000, depending on catalogue size, payments and admin needs. We send a fixed quote after briefing.",
       },
       {
         q: "Can you migrate my existing products?",
@@ -187,7 +187,7 @@ export const SERVICES: ServicePage[] = [
     faqs: [
       {
         q: "How much does a custom system cost?",
-        a: "Full platforms start from €550. Scope and timeline are confirmed after we map your workflow.",
+        a: "Custom web apps start from €3,500. Scope and timeline are confirmed after we map your workflow.",
       },
       {
         q: "Can you rebuild something we already use in spreadsheets?",

@@ -2436,6 +2436,39 @@ img {
 a.service-card {
   color: inherit;
 }
+.hp-field {
+  height: 0;
+  left: -9999px;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+}
+.case-results {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.case-results li {
+  color: var(--muted);
+  font-size: 14px;
+  padding-left: 16px;
+  position: relative;
+}
+.case-results li::before {
+  background: var(--orange);
+  border-radius: 50%;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0.55em;
+  width: 5px;
+}
+.case-study h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  margin: 0 0 18px;
+}
 @media (max-width: 860px) {
   .service-detail-layout,
   .cta-band-actions {
