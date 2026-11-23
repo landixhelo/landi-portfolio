@@ -30,7 +30,7 @@ export function ServicesPage() {
     <>
       <Seo
         title="Services | Websites, E-commerce & Custom Web Apps"
-        description={`${SERVICES_SECTION.title}. Business websites from €800, e-commerce from €2,000, custom apps from €3,500.`}
+        description={`${SERVICES_SECTION.title}. Starter from €150, web + features from €350, full platform from €550.`}
         path="/services"
         keywords={`${SITE.keywords}, web agency Europe`}
         jsonLd={jsonLd}

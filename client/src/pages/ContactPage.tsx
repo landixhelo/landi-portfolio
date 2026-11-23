@@ -87,7 +87,7 @@ export function ContactPage() {
     <>
       <Seo
         title="Get a Quote | DevByLand"
-        description="Request a fixed-price quote within 24 hours. Business websites from €800, e-commerce from €2,000, custom web apps from €3,500."
+        description="Request a fixed-price quote within 24 hours. Starter from €150, web + features from €350, full platform from €550."
         path="/contact"
         keywords={`get a quote, web development Europe, ${SITE.keywords}`}
       />
@@ -99,8 +99,8 @@ export function ContactPage() {
           <h1>Get a quote</h1>
           <p className="section-intro">
             Tell us about your project. You get a clear fixed-price quote within
-            24 hours on CET hours. Business website from €800 · E-commerce from
-            €2,000 · Custom web app from €3,500.
+            24 hours on CET hours. Starter from €150 · Web + features from €350 ·
+            Full platform from €550.
           </p>
         </div>
       </header>

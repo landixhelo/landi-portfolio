@@ -16,7 +16,7 @@ export const SITE = {
   defaultTitle:
     "DevByLand | Websites & web apps for hospitality, rental and retail",
   defaultDescription:
-    "Tirana-based web studio working with European clients on CET hours. Business websites from €800, e-commerce from €2,000, custom web apps from €3,500. Fixed quote within 24 hours.",
+    "Tirana-based web studio working with European clients on CET hours. Starter websites from €150, web + features from €350, full platforms from €550. Fixed quote within 24 hours.",
   keywords: [
     "web developer Albania",
     "website agency Europe",
@@ -71,7 +71,7 @@ export const SERVICES: ServicePage[] = [
     faqs: [
       {
         q: "How much does a website cost?",
-        a: "Business websites start from €800. E-commerce from €2,000. Custom web apps from €3,500. After a short briefing we send a fixed-price quote.",
+        a: "Starter websites start from €150. Web + features from €350. Full platforms from €550. After a short briefing we send a fixed-price quote.",
       },
       {
         q: "How long does development take?",
@@ -129,7 +129,7 @@ export const SERVICES: ServicePage[] = [
     faqs: [
       {
         q: "How much does an online store cost?",
-        a: "Online stores start from €2,000, depending on catalogue size, payments and admin needs. We send a fixed quote after briefing.",
+        a: "Full platforms start from €550, depending on catalogue size, payments and admin needs. We send a fixed quote after briefing.",
       },
       {
         q: "Can you migrate my existing products?",
@@ -187,7 +187,7 @@ export const SERVICES: ServicePage[] = [
     faqs: [
       {
         q: "How much does a custom system cost?",
-        a: "Custom web apps start from €3,500. Scope and timeline are confirmed after we map your workflow.",
+        a: "Full platforms start from €550. Scope and timeline are confirmed after we map your workflow.",
       },
       {
         q: "Can you rebuild something we already use in spreadsheets?",
